@@ -6,14 +6,29 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
     />
-    <title>Stencil Component Starter</title>
+    <title>co-gauge</title>
+    <style>
+      body {
+        background: #1f2428;
+        text-align: center;
+        font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        height: 100vh;
+        padding: 30px;
+      }
+    </style>
 
     <script type="module" src="/build/co-gauge.esm.js"></script>
     <script nomodule src="/build/co-gauge.js"></script>
   </head>
   <body>
-    <co-gauge color="#FF3D00" value="50"></co-gauge>
-    <co-gauge color="blue"></co-gauge>
-    <co-gauge color="green" value="13"></co-gauge>
+    <co-gauge color="#FF3D00" value="75">HTML 5</co-gauge>
+    <co-gauge color="blue">CSS</co-gauge>
+    <co-gauge color="green" value="13">JS</co-gauge>
   </body>
 </html>

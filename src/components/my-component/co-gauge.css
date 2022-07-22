@@ -1,9 +1,11 @@
+:host {
+  display: block;
+}
+
 :host .semi-donut{
-
-
-
-  --percentage: 0;
-  --color: #ff0;
+  --percentage: 50;
+  --color: red;
+  --background: rgba(0,0,0,0.15);
 
   width: 300px;
   height: 150px;
@@ -24,7 +26,7 @@
   width: 300px;
   height: 300px;
   border:50px solid;
-  border-color : rgba(0,0,0,0.15) rgba(0,0,0,0.15) var(--color) var(--color);
+  border-color : var(--background) var(--background) var(--color) var(--color);
   position: absolute;
   border-radius: 50%;
   left: 0;
@@ -32,5 +34,4 @@
   box-sizing : border-box;
   transform: rotate( calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ) );
   animation : fillAnimation 1s ease-in;
-
 }

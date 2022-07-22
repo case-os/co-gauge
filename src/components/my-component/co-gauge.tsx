@@ -19,10 +19,10 @@ export class CoGauge {
   render() {
     return (
       <div
-        class='semi-donut margin'
+        class='semi-donut'
         style={{ '--percentage': `${this.value}`, '--color': `${this.color}` }}
       >
-        HTML5
+        <slot />
       </div>
     );
   }
