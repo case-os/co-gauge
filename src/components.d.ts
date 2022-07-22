@@ -6,56 +6,48 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    interface CoGauge {
         /**
-          * The first name
+          * The color (HEX, RGB, ....)
          */
-        "first": string;
+        "color": string;
         /**
-          * The last name
+          * The value of the gauge between 0 and 100
          */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+        "value": number;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLCoGaugeElement extends Components.CoGauge, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLCoGaugeElement: {
+        prototype: HTMLCoGaugeElement;
+        new (): HTMLCoGaugeElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "co-gauge": HTMLCoGaugeElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface CoGauge {
         /**
-          * The first name
+          * The color (HEX, RGB, ....)
          */
-        "first"?: string;
+        "color"?: string;
         /**
-          * The last name
+          * The value of the gauge between 0 and 100
          */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+        "value"?: number;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "co-gauge": CoGauge;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "co-gauge": LocalJSX.CoGauge & JSXBase.HTMLAttributes<HTMLCoGaugeElement>;
         }
     }
 }
