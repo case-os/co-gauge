@@ -11,9 +11,9 @@
       body {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
+        /* justify-content: center; */
+        /* flex-wrap: wrap; */
         background: #1f2428;
         text-align: center;
         font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
@@ -28,6 +28,9 @@
       .w100 {
         width: 100%;
       }
+      .padding {
+        padding: 50px;
+      }
     </style>
 
     <script type="module" src="/build/co-gauge.esm.js"></script>
@@ -39,6 +42,8 @@
       <co-gauge color="blue">CSS</co-gauge>
       <co-gauge color="green" value="13">JS</co-gauge>
     </div>
-    <div class="container w100"><co-gauge color="blue">Java</co-gauge></div>
+    <div class="container w100 padding">
+      <co-gauge class="w100" color="blue" responsive="true">Java</co-gauge>
+    </div>
   </body>
 </html>

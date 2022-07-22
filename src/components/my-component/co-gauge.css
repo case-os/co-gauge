@@ -19,9 +19,6 @@
   overflow: hidden;
   color: #fff;
   color: var(--color);
-}
-
-:host .semi-donut.fixed-size{
   width: var(--width);
   height:  var(--height);
 }
@@ -37,9 +34,6 @@
   border-radius: 50%;
   transform: rotate( calc( 1deg * ( -45 + var(--percentage) * 1.8 ) ) );
   animation : fillAnimation 1s ease-in;
-}
-:host .semi-donut.fixed-size:after{
   width: var(--width);
   height: var(--width);
-
 }

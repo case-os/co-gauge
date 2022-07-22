@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description     | Type     | Default     |
-| -------- | --------- | --------------- | -------- | ----------- |
-| `first`  | `first`   | The first name  | `string` | `undefined` |
-| `last`   | `last`    | The last name   | `string` | `undefined` |
-| `middle` | `middle`  | The middle name | `string` | `undefined` |
+| Property     | Attribute    | Description                                            | Type      | Default     |
+| ------------ | ------------ | ------------------------------------------------------ | --------- | ----------- |
+| `color`      | `color`      | The color (HEX, RGB, ....)                             | `string`  | `undefined` |
+| `responsive` | `responsive` | If the component should adapt it's width automatically | `boolean` | `false`     |
+| `value`      | `value`      | The value of the gauge between 0 and 100               | `number`  | `50`        |
 
 
 ----------------------------------------------

@@ -7,7 +7,7 @@ import { Component, Element, Prop, h } from '@stencil/core';
 })
 export class CoGauge {
   @Element()
-  private el: HTMLElement;
+  private el: HTMLCoGaugeElement;
 
   // --------------------------------------------------------------------------
   //
@@ -37,12 +37,10 @@ export class CoGauge {
   // --------------------------------------------------------------------------
 
   componentDidLoad() {
-    console.log('BF did');
-
-    // let box = document.querySelector('.box');
-    // let width = box.clientWidth;
-    // let height = box.clientHeight;
-    console.log(`BF SIZE`, this.el.clientWidth, this.el.clientHeight);
+    if (this.responsive) {
+      this.el.style.setProperty('--width', `${this.el.clientWidth}px`);
+      this.el.style.setProperty('--height', `${this.el.clientWidth / 2}px`);
+    }
   }
 
   // --------------------------------------------------------------------------
@@ -52,10 +50,9 @@ export class CoGauge {
   // --------------------------------------------------------------------------
 
   render() {
-    console.log(`BF render`);
     return (
       <div
-        class='semi-donut fixed-size'
+        class={`semi-donut ${this.responsive ? 'responsive' : 'fixed-size'}`}
         style={{ '--percentage': `${this.value}`, '--color': `${this.color}` }}
       >
         <slot />
