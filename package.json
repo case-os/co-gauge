@@ -1,6 +1,6 @@
 {
   "name": "@case-os/co-gauge",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "co-gauge - a simple Gauge chart web component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
