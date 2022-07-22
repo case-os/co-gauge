@@ -1,4 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Element, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'co-gauge',
@@ -6,6 +6,15 @@ import { Component, Prop, h } from '@stencil/core';
   shadow: true,
 })
 export class CoGauge {
+  @Element()
+  private el: HTMLElement;
+
+  // --------------------------------------------------------------------------
+  //
+  //  Public Properties
+  //
+  // --------------------------------------------------------------------------
+
   /**
    * The color (HEX, RGB, ....)
    */
@@ -16,10 +25,37 @@ export class CoGauge {
    */
   @Prop() value: number = 50;
 
+  /**
+   * If the component should adapt it's width automatically
+   */
+  @Prop() responsive: boolean = false;
+
+  // --------------------------------------------------------------------------
+  //
+  //  Life Cycle
+  //
+  // --------------------------------------------------------------------------
+
+  componentDidLoad() {
+    console.log('BF did');
+
+    // let box = document.querySelector('.box');
+    // let width = box.clientWidth;
+    // let height = box.clientHeight;
+    console.log(`BF SIZE`, this.el.clientWidth, this.el.clientHeight);
+  }
+
+  // --------------------------------------------------------------------------
+  //
+  //  Render
+  //
+  // --------------------------------------------------------------------------
+
   render() {
+    console.log(`BF render`);
     return (
       <div
-        class='semi-donut'
+        class='semi-donut fixed-size'
         style={{ '--percentage': `${this.value}`, '--color': `${this.color}` }}
       >
         <slot />

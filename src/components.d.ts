@@ -12,6 +12,10 @@ export namespace Components {
          */
         "color": string;
         /**
+          * If the component should adapt it's width automatically
+         */
+        "responsive": boolean;
+        /**
           * The value of the gauge between 0 and 100
          */
         "value": number;
@@ -34,6 +38,10 @@ declare namespace LocalJSX {
           * The color (HEX, RGB, ....)
          */
         "color"?: string;
+        /**
+          * If the component should adapt it's width automatically
+         */
+        "responsive"?: boolean;
         /**
           * The value of the gauge between 0 and 100
          */
