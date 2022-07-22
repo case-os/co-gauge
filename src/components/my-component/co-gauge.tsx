@@ -57,14 +57,22 @@ export class CoGauge {
 
   render() {
     return (
-      <Host style={{ width: `${this.responsive && '100%'}` }}>
+      <Host
+        style={{
+          ...(this.responsive && {
+            width: '100%',
+          }),
+        }}
+      >
         <div
           class={{
             'semi-donut': true,
           }}
           style={{
             '--percentage': `${this.value}`,
-            '--color': `${this.color}`,
+            ...(this.color && {
+              '--color': `${this.color}`,
+            }),
           }}
         >
           <slot />
