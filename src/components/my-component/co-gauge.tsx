@@ -1,4 +1,4 @@
-import { Component, Element, Prop, h } from '@stencil/core';
+import { Component, Element, Prop, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'co-gauge',
@@ -26,6 +26,11 @@ export class CoGauge {
   @Prop() value: number = 50;
 
   /**
+   * The thickness of the gauge bar
+   */
+  @Prop() thickness: number = 50;
+
+  /**
    * If the component should adapt it's width automatically
    */
   @Prop() responsive: boolean = false;
@@ -37,9 +42,10 @@ export class CoGauge {
   // --------------------------------------------------------------------------
 
   componentDidLoad() {
+    this.el.style.setProperty('--thickness', `${this.thickness}`);
     if (this.responsive) {
       this.el.style.setProperty('--width', `${this.el.clientWidth}px`);
-      this.el.style.setProperty('--height', `${this.el.clientWidth / 2}px`);
+      this.el.style.setProperty('--height', `${this.el.clientWidth / 2}`);
     }
   }
 
@@ -51,12 +57,19 @@ export class CoGauge {
 
   render() {
     return (
-      <div
-        class={`semi-donut ${this.responsive ? 'responsive' : 'fixed-size'}`}
-        style={{ '--percentage': `${this.value}`, '--color': `${this.color}` }}
-      >
-        <slot />
-      </div>
+      <Host style={{ width: `${this.responsive && '100%'}` }}>
+        <div
+          class={{
+            'semi-donut': true,
+          }}
+          style={{
+            '--percentage': `${this.value}`,
+            '--color': `${this.color}`,
+          }}
+        >
+          <slot />
+        </div>
+      </Host>
     );
   }
 }

@@ -16,6 +16,10 @@ export namespace Components {
          */
         "responsive": boolean;
         /**
+          * The thickness of the gauge bar
+         */
+        "thickness": number;
+        /**
           * The value of the gauge between 0 and 100
          */
         "value": number;
@@ -42,6 +46,10 @@ declare namespace LocalJSX {
           * If the component should adapt it's width automatically
          */
         "responsive"?: boolean;
+        /**
+          * The thickness of the gauge bar
+         */
+        "thickness"?: number;
         /**
           * The value of the gauge between 0 and 100
          */

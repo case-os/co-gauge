@@ -6,8 +6,9 @@
   --background: rgba(0,0,0,0.15);
 
   --width: 300px;
-  --height: 150px;
-  --thickness: 50;
+  --height: 150;
+  --heightPx: calc(var(--height) * 1px);
+  --thickness: calc(var(--height) / 4);
 }
 
 :host .semi-donut{
@@ -20,7 +21,7 @@
   color: #fff;
   color: var(--color);
   width: var(--width);
-  height:  var(--height);
+  height:  var(--heightPx);
 }
 
 :host .semi-donut:after{
@@ -37,3 +38,5 @@
   width: var(--width);
   height: var(--width);
 }
+
+
