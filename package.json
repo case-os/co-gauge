@@ -1,7 +1,7 @@
 {
-  "name": "co-gauge",
+  "name": "@case-os/co-gauge",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "co-gauge - a simple Gauge chart web component",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -32,6 +32,7 @@
     "@types/jest": "^27.0.3",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
+    "np": "^7.6.2",
     "puppeteer": "^10.0.0"
   },
   "license": "MIT"
